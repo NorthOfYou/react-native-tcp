@@ -56,7 +56,7 @@ util.inherits(TcpServer, EventEmitter);
 TcpServer.prototype._debug = function() {
   if (__DEV__) {
     var args = [].slice.call(arguments);
-    console.log.apply(console, args);
+    // console.log.apply(console, args);
   }
 };
 
