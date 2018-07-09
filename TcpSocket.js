@@ -361,7 +361,7 @@ TcpSocket.prototype._write = function(buffer: any, encoding: ?String, callback: 
   var self = this;
 
   if (this._state === STATE.DISCONNECTED) {
-    throw new Error('Socket is not connected.');
+    this.emit('error', new Error('Socket is not connected.'))
   } else if (this._state === STATE.CONNECTING) {
     // we're ok, GCDAsyncSocket handles queueing internally
   }
